@@ -1,0 +1,47 @@
+/* Add these styles to your existing popup.css */
+.result-item.safe {
+    background: #E8F5E9;
+    border-left: 3px solid #4CAF50;
+  }
+  
+  .result-item.danger {
+    background: #FFEBEE;
+    border-left: 3px solid #F44336;
+    animation: pulse 1.5s infinite;
+  }
+  
+  @keyframes pulse {
+    0% { background-color: #FFEBEE; }
+    50% { background-color: #FFCDD2; }
+    100% { background-color: #FFEBEE; }
+  }
+  
+  #status {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: #ccc;
+    position: relative;
+  }
+  
+  #status::after {
+    content: attr(title);
+    position: absolute;
+    left: 20px;
+    white-space: nowrap;
+    background: #333;
+    color: white;
+    padding: 2px 5px;
+    border-radius: 3px;
+    font-size: 12px;
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+  
+  #status:hover::after {
+    opacity: 1;
+  }
+  .container{
+    width: 400px;
+    height: 400px;
+  }
