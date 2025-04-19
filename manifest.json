@@ -1,0 +1,40 @@
+{
+    "manifest_version": 3,
+    "name": "Fraud Website Detector",
+    "version": "1.0",
+    "description": "Detects potentially fraudulent websites",
+    "permissions": [
+      "activeTab",
+      "tabs",
+      "storage",
+      "declarativeNetRequest",
+      "declarativeNetRequestWithHostAccess"
+    ],
+    "host_permissions": [
+      "<all_urls>"
+    ],
+    "background": {
+      "service_worker": "background.js",
+      "type": "module"
+    },
+    "content_scripts": [
+      {
+        "matches": ["<all_urls>"],
+        "js": ["contents.js"],
+        "run_at": "document_end"
+      }
+    ],
+    "action": {
+      "default_popup": "popup/popup.html",
+      "default_icon": {
+        "16": "icons/icons16.png",
+        "48": "icons/icons48.png",
+        "128": "icons/icons128.png"
+      }
+    },
+    "icons": {
+      "16": "icons/icons16.png",
+      "48": "icons/icons48.png",
+      "128": "icons/icons128.png"
+    }
+  }
