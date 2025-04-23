@@ -1,47 +1,75 @@
-/* Add these styles to your existing popup.css */
-.result-item.safe {
-    background: #E8F5E9;
-    border-left: 3px solid #4CAF50;
-  }
-  
-  .result-item.danger {
-    background: #FFEBEE;
-    border-left: 3px solid #F44336;
-    animation: pulse 1.5s infinite;
-  }
-  
-  @keyframes pulse {
-    0% { background-color: #FFEBEE; }
-    50% { background-color: #FFCDD2; }
-    100% { background-color: #FFEBEE; }
-  }
-  
-  #status {
-    width: 15px;
-    height: 15px;
-    border-radius: 50%;
-    background: #ccc;
-    position: relative;
-  }
-  
-  #status::after {
-    content: attr(title);
-    position: absolute;
-    left: 20px;
-    white-space: nowrap;
-    background: #333;
-    color: white;
-    padding: 2px 5px;
-    border-radius: 3px;
-    font-size: 12px;
-    opacity: 0;
-    transition: opacity 0.2s;
-  }
-  
-  #status:hover::after {
-    opacity: 1;
-  }
-  .container{
-    width: 400px;
-    height: 400px;
-  }
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background: #fafafa;
+  color: #333;
+}
+
+.container {
+  width: 350px;
+  height: 500px;
+  overflow-y: auto;
+  padding: 20px;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+#status {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-top: 5px;
+}
+
+.safe {
+  background-color: #4caf50;
+}
+
+.danger {
+  background-color: #f44336;
+}
+
+.result-item {
+  background: #fff;
+  border-radius: 6px;
+  padding: 10px;
+  margin-top: 10px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.result-item ul {
+  padding-left: 18px;
+  margin: 8px 0;
+}
+
+.actions {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.actions button {
+  background: #f65718;
+  color: white;
+  border: none;
+  padding: 10px 14px;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  flex: 1 0 45%;
+}
+
+.actions button:hover {
+  background: #d4490f;
+}
